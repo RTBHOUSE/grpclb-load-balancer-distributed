@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>example-server</artifactId>
+    <packaging>jar</packaging>
+    <name>example-server</name>
+    <parent>
+        <groupId>com.rtbhouse.grpc</groupId>
+        <artifactId>loadbalancer-distributed</artifactId>
+        <version>1.0</version>
+        <relativePath>../../</relativePath>
+    </parent>
+    
+    <properties>
+        <shaded.main.class>
+            com.rtbhouse.grpc.loadbalancer.distributed.ExampleServer
+        </shaded.main.class>
+    </properties>
+    
+    <dependencies>
+        <dependency>
+            <groupId>com.rtbhouse.grpc</groupId>
+            <artifactId>cluster-connector</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.rtbhouse.grpc</groupId>
+            <artifactId>examples-common</artifactId>
+        </dependency>
+
+        <!-- Logging. Sl4j + logback -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+
+        <!-- GRPC dependencies -->
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-netty-shaded</artifactId>
+        </dependency>
+        <!-- <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-grpclb</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-services</artifactId>
+        </dependency> -->
+
+        <!--test dependecies-->
+        <!-- <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
+        </dependency> -->
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
