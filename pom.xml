@@ -21,7 +21,7 @@
         <proto.google.common.protos.version>1.0.0</proto.google.common.protos.version>
         <protobuf.version>3.5.1</protobuf.version>
         <protoc.version>3.5.1-1</protoc.version>
-        <guava.version>23.6-jre</guava.version>
+        <guava.version>29.0-jre</guava.version>
         <slf4j.version>1.7.25</slf4j.version>
         <logback.version>1.0.13</logback.version>
         <spotify.version>3.1.5</spotify.version>
